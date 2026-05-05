@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+venv/
+env/
+djvenv/
+db.sqlite3
+static/videos/*
+!static/videos/project_5.mp4

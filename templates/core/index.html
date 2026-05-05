@@ -1,0 +1,694 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<!-- Section 1: Cinematic Hero -->
+<section id="home" class="hero">
+    <div class="hero-video-container">
+        <video id="heroVideo" autoplay muted playsinline class="hero-video">
+            <source src="{% static 'videos/project_5.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-sub">Excellence in Every Inch</span>
+            <h1 class="hero-headline">Premium Mats & <br><span style="color: var(--green-bright);">Artificial
+                    Grass</span> Solutions.</h1>
+            <p class="hero-text">SBKM Enterprises delivers international-standard flooring solutions for luxury homes,
+                elite gyms, and high-end commercial spaces across Kerala.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/919846554622" class="btn-premium btn-whatsapp">
+                    <span>Get Luxury Consultation</span>
+                </a>
+            </div>
+
+            <div class="trust-indicators">
+                <span><i class="fas fa-check-circle" style="color: var(--green-bright);"></i> Kerala's Elite
+                    Choice</span>
+                <span><i class="fas fa-check-circle" style="color: var(--green-bright);"></i> 10+ Years Authority</span>
+                <span><i class="fas fa-check-circle" style="color: var(--green-bright);"></i> 500+ Projects</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('heroVideo');
+        const videos = [
+            "{% static 'videos/project_5.mp4' %}",
+            "{% static 'videos/project_1.mp4' %}"
+        ];
+        let currentVideo = 0;
+
+        if (video) {
+            video.onended = function () {
+                currentVideo++;
+                if (currentVideo >= videos.length) currentVideo = 0;
+                video.src = videos[currentVideo];
+                video.play();
+            };
+        }
+    </script>
+</section>
+
+<!-- Section 2: About SBKM -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: center;">
+            <div class="about-visual reveal-title" style="position: relative;">
+                <!-- 3D Layer Stack Reveal Container -->
+                <div class="layer-stack-container"
+                    style="background: var(--charcoal-light); height: 500px; border-radius: 40px; overflow: hidden; border: 1px solid var(--border); position: relative; perspective: 1200px; display: flex; align-items: center; justify-content: center;">
+                    <div class="layer-stack"
+                        style="position: relative; width: 60%; height: 60%; transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg);">
+                        <!-- Base Layer -->
+                        <div class="stack-layer layer-base"
+                            style="position: absolute; inset: 0; background: #222; border: 2px solid #333; border-radius: 10px; transform: translateZ(0); box-shadow: -10px 10px 30px rgba(0,0,0,0.5);">
+                            <div
+                                style="position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; color: #555; font-weight:bold; font-family:var(--font-heading);">
+                                SUB-BASE</div>
+                        </div>
+                        <!-- Core / Adhesive Layer -->
+                        <div class="stack-layer layer-core"
+                            style="position: absolute; inset: 0; background: rgba(46, 125, 50, 0.8); border: 2px solid var(--green-bright); border-radius: 10px; transform: translateZ(50px); backdrop-filter: blur(5px);">
+                            <div
+                                style="position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; color: white; font-weight:bold; font-family:var(--font-heading);">
+                                BONDING AGENT</div>
+                        </div>
+                        <!-- Top Surface Layer -->
+                        <div class="stack-layer layer-top"
+                            style="position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&q=80&w=800') center/cover; border: 2px solid #fff; border-radius: 10px; transform: translateZ(100px);">
+                            <div
+                                style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); border-radius: 10px;">
+                            </div>
+                            <div
+                                style="position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; color: white; font-weight:bold; font-family:var(--font-heading); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+                                PREMIUM MAT</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-badge"
+                    style="position: absolute; bottom: -30px; right: -30px; background: var(--white); color: var(--charcoal); padding: 30px; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                    <div style="font-size: 2.5rem; font-weight: 900; font-family: var(--font-heading);">500+</div>
+                    <div style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
+                        Projects Completed</div>
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-tag">Legacy of Quality</span>
+                <h2 class="section-title">The Standard of Premium Flooring in Kerala.</h2>
+                <p style="font-size: 1.1rem; opacity: 0.7; margin-bottom: 2rem;">SBKM Enterprises is a trusted premium
+                    flooring solutions provider, delivering high-performance artificial grass, gym mats, and
+                    industrial-grade bonding systems. We don't just sell products; we engineer spaces for comfort,
+                    durability, and aesthetics.</p>
+
+                <div class="stats-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="stat-item">
+                        <h4 style="color: var(--green-bright); font-size: 1.5rem;">1000+</h4>
+                        <p style="font-size: 0.8rem; opacity: 0.5;">Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 style="color: var(--green-bright); font-size: 1.5rem;">10+</h4>
+                        <p style="font-size: 0.8rem; opacity: 0.5;">Categories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3: Business Identity -->
+<section id="identity" class="business-identity" style="background: var(--charcoal-light);">
+    <div class="container">
+        <div class="section-header reveal-title" style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+            <span class="section-tag">Corporate Identity</span>
+            <h2 class="section-title">A Legacy of Trust & Transparency.</h2>
+        </div>
+
+        <div class="identity-layout">
+            <!-- Left Side: GST Certificate Style -->
+            <!-- Left Side: GST Certificate Style -->
+            <div class="identity-card gst-cert reveal-title" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                data-tilt-glare="true" data-tilt-max-glare="0.2"
+                style="transform-style: preserve-3d; perspective: 1000px;">
+                <div class="cert-header" style="transform: translateZ(40px);">
+                    <div class="cert-stamp">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-title">
+                        <span class="cert-tag">Official Registration</span>
+                        <h3>GSTIN Verified</h3>
+                    </div>
+                </div>
+
+                <div class="cert-number-box"
+                    style="transform: translateZ(60px); box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                    <div class="cert-label">Goods & Services Tax Identification Number</div>
+                    <div class="cert-number">32BFCPC2843H1Z0</div>
+                </div>
+
+                <div class="cert-details" style="transform: translateZ(30px);">
+                    <div class="cert-row">
+                        <span>Legal Name</span>
+                        <strong>SBKM ENTERPRISES</strong>
+                    </div>
+                    <div class="cert-row">
+                        <span>State Jurisdiction</span>
+                        <strong>Kerala, India</strong>
+                    </div>
+                    <div class="cert-row">
+                        <span>Status</span>
+                        <span class="status-active"><i class="fas fa-check-circle"></i> Active Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Business Profile Details -->
+            <!-- Right Side: Business Profile Details -->
+            <div class="identity-card profile-details reveal-title" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                data-tilt-glare="true" data-tilt-max-glare="0.2"
+                style="transform-style: preserve-3d; perspective: 1000px;">
+                <div class="profile-header" style="transform: translateZ(40px);">
+                    <i class="fas fa-building-columns"></i>
+                    <h3>Corporate Profile</h3>
+                </div>
+
+                <div class="profile-grid" style="transform: translateZ(30px);">
+                    <div class="profile-item">
+                        <div class="item-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="item-info">
+                            <label>Entity Type</label>
+                            <p>Proprietorship</p>
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="item-icon"><i class="fas fa-id-card"></i></div>
+                        <div class="item-info">
+                            <label>Registration Type</label>
+                            <p>Regular</p>
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="item-icon"><i class="fas fa-store"></i></div>
+                        <div class="item-info">
+                            <label>Nature of Business</label>
+                            <p>Wholesale & Retail Business</p>
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="item-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="item-info">
+                            <label>Registration Date</label>
+                            <p>September 21, 2018</p>
+                        </div>
+                    </div>
+                    <div class="profile-item wide">
+                        <div class="item-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="item-info">
+                            <label>Department Jurisdiction</label>
+                            <p>Commercial Tax Office, Thirurangadi (KL130)</p>
+                        </div>
+                    </div>
+                    <div class="profile-item wide">
+                        <div class="item-icon"><i class="fas fa-location-dot"></i></div>
+                        <div class="item-info">
+                            <label>Registered Address</label>
+                            <p>1/267 Komarapadi, Thenhipalam, Kerala - 673636</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section 4: Complete Services -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-header reveal-title">
+            <span class="section-tag">Solutions</span>
+            <h2 class="section-title">Our Specialized Ecosystem.</h2>
+        </div>
+
+        <div class="grid-services">
+            <!-- 6 Core Service Items with Correct Images -->
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://freedomfitnessequipment.com/cdn/shop/collections/Gym-Flooring--1687195401207.png?v=1687195402&width=1384s"
+                        alt="Home Gym Mats">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Home Gym Mats</h3>
+                    <p>Custom mats for home gyms ensuring comfort and safety.</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://imgs.search.brave.com/GZmUmgJ54PWSMKfwwaNyhWnXz_oVEX350AO-GRYG8LY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTUv/OTcxLzgyMy9zbWFs/bC9mcmVzaGx5LXJv/bGxlZC1hcnRpZmlj/aWFsLWdyYXNzLW9u/LWEtc3VubnktZGF5/LWluLWEtZ3JlZW4t/cGFyay1zZXR0aW5n/LWZyZWUtcGhvdG8u/anBlZw"
+                        alt="Artificial Grass">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Artificial Grass</h3>
+                    <p>Durable artificial grass for outdoor and agricultural use.</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://imgs.search.brave.com/HUSkCt1Yz9Q9cUCmXRY1UUk7yIEqIRBxKJSri04Y_Ws/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODF5dU81alRHN0wu/anBn"
+                        alt="Farm & Turf Mats">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-tractor"></i></div>
+                    <h3>Farm & Turf Mats</h3>
+                    <p>Heavy-duty flooring for agricultural and outdoor use.</p>
+                </div>
+            </div>
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://imgs.search.brave.com/yPsslfwfbIqTjOFnqyf74XieLIiwtmlXojXqqjyLuLY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9jb3JuZXIt/Y2FyLW1hdC1mbG9v/ci1ob2xkZXItMjYw/bnctNTMwMzY4MDE1/LmpwZw"
+                        alt="Car Mats">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-car"></i></div>
+                    <h3>Car Mats</h3>
+                    <p>Custom-fit protective mats for luxury vehicles.</p>
+                </div>
+            </div>
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://sbkm.co.in/images/sbkm1.webp" alt="Super Bond Yellow 9">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-couch"></i></div>
+                    <h3>Super Bond Yellow 9</h3>
+                    <p>Industrial spray/brush rubber solution for modern sofas, furniture, and mattresses. (4.5 LTR)</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://sbkm.co.in/images/sbkm2.webp" alt="MyTLOK 743">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-gem"></i></div>
+                    <h3>MyTLOK 743</h3>
+                    <p>Single component instant bonding adhesive for toys, seat upholstery, and footwear.</p>
+                </div>
+            </div>
+
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://sbkm.co.in/images/sbkm3.webp" alt="Super Bond SR4X">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Super Bond SR4X</h3>
+                    <p>Synthetic rubber based adhesive ideal for albums and floor mating. Contains no harmful benzene.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div class="service-card-img">
+                    <img src="https://sbkm.co.in/images/sbkm4.webp" alt="Vinyl Car Mats">
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon"><i class="fas fa-car-side"></i></div>
+                    <h3>Vinyl Car Mats</h3>
+                    <p>Premium textured vinyl car flooring mats available in 0.75mm, 0.95mm, and 1mm thickness.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section 6: Cinematic Video Portfolio -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header reveal-title">
+            <span class="section-tag">Cinematic Portfolio</span>
+            <h2 class="section-title">Execution in Motion.</h2>
+        </div>
+
+        <div class="swiper portfolio-swiper reveal-title" style="padding-bottom: 50px;">
+            <div class="swiper-wrapper">
+                <!-- Video 1 -->
+                <div class="swiper-slide portfolio-item"
+                    style="border-radius: 30px; overflow: hidden; position: relative; height: 100%; border: 1px solid var(--border); background: #000;">
+                    <video autoplay muted loop playsinline preload="auto"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="{% static 'videos/project_1.mp4' %}" type="video/mp4">
+                    </video>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                        <span class="section-tag" style="color: var(--green-bright); font-size: 0.7rem;">Luxury
+                            Fitness</span>
+                        <h3 style="color: white; font-size: 1.2rem;">Elite Gym Flooring</h3>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="swiper-slide portfolio-item"
+                    style="border-radius: 30px; overflow: hidden; position: relative; height: 100%; border: 1px solid var(--border); background: #000;">
+                    <video autoplay muted loop playsinline preload="auto"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="{% static 'videos/project_2.mp4' %}" type="video/mp4">
+                    </video>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                        <span class="section-tag" style="color: var(--green-bright); font-size: 0.7rem;">Architectural
+                            Turf</span>
+                        <h3 style="color: white; font-size: 1.2rem;">Artificial Grass Installation</h3>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="swiper-slide portfolio-item"
+                    style="border-radius: 30px; overflow: hidden; position: relative; height: 100%; border: 1px solid var(--border); background: #000;">
+                    <video autoplay muted loop playsinline preload="auto"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="{% static 'videos/project_3.mp4' %}" type="video/mp4">
+                    </video>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                        <span class="section-tag" style="color: var(--green-bright); font-size: 0.7rem;">Industrial
+                            Utility</span>
+                        <h3 style="color: white; font-size: 1.2rem;">Heavy-Duty Cow Mats</h3>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="swiper-slide portfolio-item"
+                    style="border-radius: 30px; overflow: hidden; position: relative; height: 100%; border: 1px solid var(--border); background: #000;">
+                    <video autoplay muted loop playsinline preload="auto"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="{% static 'videos/project_5.mp4' %}" type="video/mp4">
+                    </video>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                        <span class="section-tag" style="color: var(--green-bright); font-size: 0.7rem;">Premium
+                            Aesthetics</span>
+                        <h3 style="color: white; font-size: 1.2rem;">Commercial Flooring Design</h3>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="swiper-slide portfolio-item"
+                    style="border-radius: 30px; overflow: hidden; position: relative; height: 100%; border: 1px solid var(--border); background: #000;">
+                    <video autoplay muted loop playsinline preload="auto"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="{% static 'videos/project_5.mp4' %}" type="video/mp4">
+                    </video>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                        <span class="section-tag" style="color: var(--green-bright); font-size: 0.7rem;">Elite
+                            Transformations</span>
+                        <h3 style="color: white; font-size: 1.2rem;">Luxury Residence Project</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Process section removed as requested -->
+
+<!-- Section 8: Reviews & Testimonials -->
+<section id="reviews" class="testimonials">
+    <div class="container">
+        <div class="section-header reveal-title" style="text-align: center; margin-bottom: 3rem;">
+            <span class="section-tag">Voices of Trust</span>
+            <h2 class="section-title">Client Experiences.</h2>
+        </div>
+
+        <!-- Overall Rating & Write Review Button -->
+        <div class="reviews-summary-container"
+            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: var(--glass); padding: 2.5rem; border-radius: 30px; border: 1px solid var(--border); margin-bottom: 4rem;">
+            <div class="overall-rating" style="display: flex; align-items: center; gap: 2rem;">
+                <div class="rating-number"
+                    style="font-size: 4rem; font-weight: 800; font-family: var(--font-heading); color: var(--green-bright); line-height: 1;">
+                    4.9
+                </div>
+                <div class="rating-details">
+                    <div class="stars" style="color: #FFD700; font-size: 1.5rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div style="font-size: 1rem; color: #a0a0a0;">Based on 1,240+ Customer Reviews</div>
+                    <div
+                        style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-top: 0.5rem;">
+                        Total Company Rating</div>
+                </div>
+            </div>
+            <button id="openReviewModal" class="btn-premium"
+                style="background: var(--green-bright); border: none; color: white;">
+                <i class="fas fa-pen" style="margin-right: 10px;"></i> Write a Review
+            </button>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="reviews-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Review 1 -->
+            <div class="review-card"
+                style="background: var(--charcoal-light); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                    <div class="stars" style="color: #FFD700; font-size: 1.1rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span
+                        style="font-size: 0.75rem; background: rgba(46, 125, 50, 0.2); color: var(--green-bright); padding: 5px 10px; border-radius: 20px;">Gym
+                        Mats</span>
+                </div>
+                <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; color: #ddd; line-height: 1.6;">
+                    "SBKM transformed our commercial gym. The flooring is world-class, and their installation team was
+                    incredibly professional. Highly recommended for premium spaces."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div
+                        style="width: 45px; height: 45px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        JD</div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--white);">John Doe</div>
+                        <div style="font-size: 0.8rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;">
+                            Elite Fitness Kochi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card"
+                style="background: var(--charcoal-light); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                    <div class="stars" style="color: #FFD700; font-size: 1.1rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span
+                        style="font-size: 0.75rem; background: rgba(46, 125, 50, 0.2); color: var(--green-bright); padding: 5px 10px; border-radius: 20px;">Artificial
+                        Grass</span>
+                </div>
+                <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; color: #ddd; line-height: 1.6;">
+                    "The ultra-premium artificial grass completely changed the look of our resort. It feels extremely
+                    natural and has withstood heavy rains perfectly. Absolutely worth the investment."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div
+                        style="width: 45px; height: 45px; background: var(--charcoal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        SM</div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--white);">Sarah Menon</div>
+                        <div style="font-size: 0.8rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;">
+                            Luxury Stays Wayanad</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card"
+                style="background: var(--charcoal-light); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                    <div class="stars" style="color: #FFD700; font-size: 1.1rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span
+                        style="font-size: 0.75rem; background: rgba(46, 125, 50, 0.2); color: var(--green-bright); padding: 5px 10px; border-radius: 20px;">Super
+                        Bond Yellow 9</span>
+                </div>
+                <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; color: #ddd; line-height: 1.6;">
+                    "We switched to Super Bond Yellow 9 for our furniture manufacturing unit. The bonding strength is
+                    unparalleled and it dries incredibly fast. Has sped up our production."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div
+                        style="width: 45px; height: 45px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">
+                        RK</div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--white);">Rajesh Kumar</div>
+                        <div style="font-size: 0.8rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px;">RK
+                            Furnitures</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Review Submission Modal -->
+<div class="modal-overlay" id="reviewModal">
+    <div class="modal-content"
+        style="background: var(--charcoal); padding: 3rem; border-radius: 30px; border: 1px solid var(--border); width: 100%; max-width: 600px; position: relative;">
+        <button id="closeReviewModal"
+            style="position: absolute; top: 20px; right: 25px; background: transparent; border: none; color: white; font-size: 1.5rem; cursor: pointer;"><i
+                class="fas fa-times"></i></button>
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Share Your Experience</h3>
+        <p style="color: #a0a0a0; margin-bottom: 2rem;">Help others make the right choice by reviewing our products.</p>
+
+        <form id="submitReviewForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Which product
+                    did you purchase?</label>
+                <select id="reviewProduct" required
+                    style="width: 100%; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #0a0a0a; color: white; outline: none; appearance: none;">
+                    <option value="" disabled selected>Select a Product...</option>
+                    <option value="Home Gym Mats">Home Gym Mats</option>
+                    <option value="Artificial Grass">Artificial Grass</option>
+                    <option value="Farm & Turf Mats">Farm & Turf Mats</option>
+                    <option value="Car Mats">Car Mats</option>
+                    <option value="Super Bond Yellow 9">Super Bond Yellow 9</option>
+                    <option value="MyTLOK 743">MyTLOK 743</option>
+                    <option value="Super Bond SR4X">Super Bond SR4X</option>
+                    <option value="Vinyl Car Mats">Vinyl Car Mats</option>
+                </select>
+            </div>
+
+            <div>
+                <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Rate your
+                    experience</label>
+                <div class="star-rating-input"
+                    style="color: #FFD700; font-size: 2rem; cursor: pointer; display: flex; gap: 10px;">
+                    <i class="far fa-star star-select" data-rating="1"></i>
+                    <i class="far fa-star star-select" data-rating="2"></i>
+                    <i class="far fa-star star-select" data-rating="3"></i>
+                    <i class="far fa-star star-select" data-rating="4"></i>
+                    <i class="far fa-star star-select" data-rating="5"></i>
+                </div>
+                <input type="hidden" id="selectedRating" required>
+            </div>
+
+            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <input type="text" id="reviewName" placeholder="Your Name" required
+                    style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #0a0a0a; color: white; width: 100%;">
+                <input type="text" id="reviewCompany" placeholder="Company / City"
+                    style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #0a0a0a; color: white; width: 100%;">
+            </div>
+
+            <textarea id="reviewText" placeholder="Write your review here..." rows="4" required
+                style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: #0a0a0a; color: white; width: 100%;"></textarea>
+
+            <button type="submit" class="btn-premium"
+                style="background: var(--green-bright); border: none; color: white; width: 100%; justify-content: center; margin-top: 1rem;">
+                Submit Review
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Section 9: Location -->
+<section id="location" class="location" style="background: var(--charcoal-light);">
+    <div class="container">
+        <div class="section-header reveal-title">
+            <span class="section-tag">Find Us</span>
+            <h2 class="section-title">Our Presence.</h2>
+        </div>
+
+        <div class="map-container reveal-title"
+            style="border-radius: 40px; overflow: hidden; border: 1px solid var(--border); height: 500px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.684!2d75.8281244!3d11.2017459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6593f0b2f5b5b%3A0x28637739504c5e3!2sSbkm%20enterprises!5e0!3m2!1sen!2sin!4v1714392000000!5m2!1sen!2sin&q=Sbkm+enterprises+Kolathara"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Section 10: Contact -->
+<section id="contact" class="contact"
+    style="background: #fefefe; position: relative; overflow: hidden; padding: 120px 0;">
+    <!-- Dynamic Background Animation -->
+    <div class="contact-glow glow-1"></div>
+    <div class="contact-glow glow-2"></div>
+
+    <div class="container">
+        <div class="contact-box">
+            <div class="contact-info">
+                <span class="section-tag" style="color: var(--green);">Get In Touch</span>
+                <h2 style="color: #ffffff; font-size: 3rem; margin-bottom: 2rem;">Contact Us.</h2>
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 3rem;">Ready for an ultra-premium flooring
+                    transformation? Connect
+                    with our experts today.</p>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem;">
+                        <i class="fas fa-phone" style="color: var(--green-bright);"></i>
+                        <span style="font-weight: 600; color: #ffffff;">+91 98465 54622</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1.5rem;">
+                        <i class="fab fa-whatsapp" style="color: var(--green-bright);"></i>
+                        <span style="font-weight: 600; color: #ffffff;">WhatsApp Now</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="whatsappForm">
+                    <div class="form-row">
+                        <input type="text" id="waName" placeholder="Full Name" required
+                            style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; background: rgba(255,255,255,0.05); color: #fff;">
+                        <input type="tel" id="waPhone" placeholder="Phone Number" required
+                            style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; background: rgba(255,255,255,0.05); color: #fff;">
+                    </div>
+                    <input type="email" id="waEmail" placeholder="Email Address"
+                        style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; margin-bottom: 1rem; background: rgba(255,255,255,0.05); color: #fff;">
+                    <input type="text" id="waCity" placeholder="City/Area" required
+                        style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; margin-bottom: 1rem; background: rgba(255,255,255,0.05); color: #fff;">
+                    <textarea id="waProject" placeholder="Tell us about your project" rows="4" required
+                        style="padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; margin-bottom: 2rem; background: rgba(255,255,255,0.05); color: #fff;"></textarea>
+                    <button type="submit" class="btn-premium"
+                        style="background: var(--green-bright); color: #fff; width: 100%; justify-content: center; border: none; cursor: pointer;">Submit
+                        Inquiry</button>
+                </form>
+
+                <script>
+                    document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const name = encodeURIComponent(document.getElementById('waName').value);
+                        const phone = encodeURIComponent(document.getElementById('waPhone').value);
+                        const email = encodeURIComponent(document.getElementById('waEmail').value);
+                        const city = encodeURIComponent(document.getElementById('waCity').value);
+                        const project = encodeURIComponent(document.getElementById('waProject').value);
+
+                        const message = `*New Inquiry for SBKM Enterprises*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email || 'N/A'}%0A*City:* ${city}%0A*Project Details:* ${project}`;
+
+                        const whatsappNumber = '919846554622';
+                        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+                        window.open(whatsappURL, '_blank');
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+venv/
+venv_sbkm/
+*.pyc
+__pycache__/
+db.sqlite3
+staticfiles/
+static/videos/project_5.mp4
+.env
+.vscode/

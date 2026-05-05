@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBKM Enterprises | Ultra-Premium Flooring Solutions</title>
+    <meta name="description"
+        content="SBKM Enterprises - International luxury flooring solutions. Artificial grass, gym mats, and complete industrial bonding solutions in Kerala.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=2">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js & Loaders -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <!-- Swiper & Vanilla Tilt -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+</head>
+
+<body class="bg-charcoal">
+    <!-- Premium Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">SBKM</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="{% url 'home' %}" class="logo">
+                <span class="logo-text">SB<span class="logo-k">K</span>M</span>
+                <div class="logo-sub-container">
+                    <div class="logo-bars">
+                        <div class="bar-black"></div>
+                        <div class="bar-green"></div>
+                    </div>
+                    <span class="logo-sub">ENTERPRISES</span>
+                </div>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">SB<span class="logo-k">K</span>M</span>
+                        <div class="logo-sub-container">
+                            <div class="logo-bars">
+                                <div class="bar-black"></div>
+                                <div class="bar-green"></div>
+                            </div>
+                            <span class="logo-sub">ENTERPRISES</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">International luxury commercial brand specializing in premium flooring
+                        systems and industrial bonding solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#about">About SBKM</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#projects">Recent Projects</a></li>
+                        <li><a href="#faq">Knowledge Base</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Artificial Grass</a></li>
+                        <li><a href="#">Gym Flooring</a></li>
+                        <li><a href="#">Cow Mats</a></li>
+                        <li><a href="#">Industrial Adhesives</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98465 54622</p>
+                    <p><i class="fas fa-envelope"></i> info@sbkm.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 SBKM Enterprises. Elite Premium Commercial Branding. | Website built by <a
+                        href="https://corvun.com" target="_blank"
+                        style="color: var(--green-bright); text-decoration: none; font-weight: 600;">Corvun Studio</a>
+                </p>
+                <div class="footer-legal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Premium AI Assistant Widget -->
+    <div class="ai-widget-container">
+        <div class="ai-chat-window" id="aiChatWindow">
+            <div class="ai-chat-header">
+                <div class="ai-header-info">
+                    <div class="ai-avatar-header"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>SBKM Concierge</h4>
+                        <span class="ai-status"><span></span> Always Active</span>
+                    </div>
+                </div>
+                <button class="ai-close-btn" id="aiCloseBtn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="ai-chat-body" id="aiChatBody">
+                <div class="ai-message ai-received">
+                    <div class="ai-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="ai-bubble">Welcome to SBKM Enterprises. I am your personal AI Concierge. How may I
+                        assist you with your premium flooring needs today?</div>
+                </div>
+            </div>
+            <div class="ai-chat-footer">
+                <input type="text" placeholder="Ask about our products..." id="aiInput">
+                <button class="ai-send-btn" id="aiSendBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <button class="ai-trigger-btn" id="aiTriggerBtn">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
